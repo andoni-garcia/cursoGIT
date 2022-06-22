@@ -1,0 +1,34 @@
+@import '../_colors';
+@import 'enhanced-product-item';
+
+.enhanced-products-component {
+  .search-bar-input-container {
+    #filter {
+      border-radius: 10px;
+      border: solid 2px $blue;
+      background: #FFFFFF;
+    }
+
+    .icon-search {
+      position: absolute;
+      color: $blue;
+      cursor: pointer;
+      font-size: 20px;
+      right: 30px;
+      z-index: 5;
+      top: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .icon-search {
+        top: 14px;
+      }
+    }
+  }
+
+  .empty-results {
+    display: none;
+  }
+
+  @include enhancedProductItem;
+}

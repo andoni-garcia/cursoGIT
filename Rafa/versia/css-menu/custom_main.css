@@ -1,0 +1,33 @@
+.container .container {
+     padding-left: 0px !important;
+     padding-right: 0px !important;
+ }
+
+.text-image img{
+    height: auto !important;
+}
+
+.text-image__body p{
+    margin-bottom: 0px;
+}
+
+.main-footer .main-footer__bottom li {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+/** SMC-316 **/
+.category-tile:after {
+    pointer-events: none;
+    height: 35px;
+}
+
+.category-tile__text__inner{
+    padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+    .category-tile__text {
+        margin-bottom: 32px;
+    }
+}

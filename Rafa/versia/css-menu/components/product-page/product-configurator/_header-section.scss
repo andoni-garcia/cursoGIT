@@ -1,0 +1,41 @@
+@import "../../colors";
+@import "../../mixins";
+.productconfigurator-component {
+  .product-configuration-header-section {
+    .name-description-phone {
+      display: none;
+    }
+
+    @include image;
+
+    .image > img {
+      max-width: 300px;//SMC "Large" image width
+    }
+
+    .name-description {
+      .name {
+        margin-bottom: 8px;
+      }
+    }
+
+    .product-video {
+      width: 100%;
+      border: 1px solid #AAA;
+    }
+
+    &.phone,
+    &.tablet {
+      .name-description-desktop {
+        .name {
+          display: none;
+        }
+        .description {
+          margin-top: 16px;
+        }
+      }
+      .name-description-phone {
+        display: block;
+      }
+    }
+  }
+}

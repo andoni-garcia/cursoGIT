@@ -1,0 +1,26 @@
+@mixin prefix_grid($columns, $rows) {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: $columns;
+    grid-template-columns: $columns;
+    -ms-grid-rows: $rows;
+    grid-template-rows: $rows;
+}
+
+@mixin prefix_grid_item($column, $row, $column_span: 1, $row_span: 1) {
+    -ms-grid-column: $column;
+    -ms-grid-column-span: $column_span;
+    @if $column_span != 1 {
+        grid-column: $column / span $column_span;
+    } @else {
+        grid-column: $column;
+    }
+    -ms-grid-row: $row;
+    -ms-grid-row-span: $row_span;
+    @if $row_span != 1 {
+        grid-row: $row / span $row_span;
+    } @else {
+        grid-row: $row;
+
+    }
+}

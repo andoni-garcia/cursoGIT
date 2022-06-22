@@ -1,0 +1,322 @@
+.idbl_hto {
+    &--light {
+        .idbl_hto__content {
+            padding-bottom: 0;
+            &__data,
+            &__actions--switch {
+                display: none;
+            }
+            &__partnumber {
+                @include prefix_grid_item(1, 2);
+            }
+            &__addtobasketbar {
+                .erp-info-container {
+                    display: flex;
+                    margin-top: 5px;
+                    .erp-info-data {
+                        width: 100%;
+                        .item__label,
+                        .item__value {
+                            flex-shrink: 1;
+                        }
+                        .item__value {
+                            font-weight: 800;
+                        }
+                        .item:nth-child(even) {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+        &--only_cpn {
+            .idbl_hto__content {
+                display: flex;
+                justify-content: center;
+                &__info,
+                &__actions {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.idbl_hto {
+    &--light {
+        .idbl_hto__content {
+            @include prefix_grid(160px 1fr, auto);
+            &__partnumber{
+                padding-top: 13px;
+            }
+            &__addtobasketbar {
+                @include prefix_grid_item(1, 2, 2);
+                @include prefix_grid(160px 1fr, auto);
+                .erp-info-container .erp-info-data {
+                    @include prefix_grid(50% 50%, auto);
+                    .item:not(.hidden) {
+                        margin: 0;
+                    }
+                    .item__label {
+                        flex-basis: 60%;
+                    }
+                    .item__value {
+                        flex-basis: 40%;
+                    }
+                    .item.first-item {
+                        @include prefix_grid_item(1, 1);
+                        & ~ .item.first-item {
+                            @include prefix_grid_item(1, 2);
+                        }
+                    }
+                    .item.second-item {
+                        @include prefix_grid_item(2, 1);
+                        & ~ .item.second-item {
+                            @include prefix_grid_item(2, 2);
+                        }
+                    }
+                }
+                .idbl_hto__content__actions--buttons {
+                    .basket-actions-container {
+                        margin: 0;
+                        justify-content: flex-end;
+                        &,
+                        .buttons-container {
+                            flex-wrap: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    .idbl_hto {
+        &--light {
+            .idbl_hto__content {
+                @include prefix_grid(minmax(190px, max-content) 1fr, auto);
+                &__addtobasketbar:not(.idbl_hto__content__addtobasketbar--no_erp_info) {
+                    .erp-info-container {
+                        .erp-info-data {
+                            width: 450px;
+                        }
+                    }
+                }
+                &__addtobasketbar {
+                    @include prefix_grid(190px 1fr, auto);
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 992px){
+    .idbl_hto {
+        &--light {
+            .idbl_hto__content {
+                grid-gap: 0 6px;
+                &__addtobasketbar:not(.idbl_hto__content__addtobasketbar--no_erp_info) {
+                    .erp-info-container {
+                        .erp-info-data {
+                            width: 540px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin idbl_hto--light--min-width-1200 {
+    .idbl_hto {
+        &--light {
+            .idbl_hto__content {
+                @include prefix_grid(minmax(60px, max-content) 1fr, auto);
+                &__partnumber{
+                    padding-top: 4px;
+                }
+                &__addtobasketbar {
+                    @include prefix_grid_item(2, 2, 1);
+                    @include prefix_grid(1fr minmax(20%, 250px), auto);
+                    &--no_erp_info {
+                        @include prefix_grid(0 minmax(20%, 250px), auto);
+                    }
+
+                    .idbl_hto__content__info {
+                        @include prefix_grid_item(1, 1);
+                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                            /* IE10+ CSS styles go here */
+                            min-width: auto;
+                            width: auto;
+                        }
+                    }
+                    .idbl_hto__content__actions--buttons {
+                        @include prefix_grid_item(2, 1);
+                        .basket-actions-container {
+                            margin-top: -4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.idbl_hto_wrapper.idbl_hto__wrapper--alert,
+.idbl_hto_wrapper.idbl_hto_wrapper--no_info {
+    .idbl_hto--light .idbl_hto__content {
+        &__addtobasketbar {
+            .erp-info-container .erp-info-data {
+                display: none;
+            }
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+        @include idbl_hto--light--min-width-1200;
+        .idbl_hto--light .idbl_hto__content {
+            @include prefix_grid(minmax(max-content, 250px) 1fr, auto);
+            &__partnumber {
+                align-items: center;
+            }
+            &__addtobasketbar {
+                @include prefix_grid(minmax(370px, 450px) 250px, auto);
+                &--no_erp_info {
+                    @include prefix_grid(0 250px, auto);
+                }
+                .erp-info-container {
+                    .erp-info-data {
+                        display: none;
+                    }
+                }
+            }
+            &__info {
+                .alert {
+                    padding: 6px 10px;
+                    font-size: .85rem;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px){
+    @include idbl_hto--light--min-width-1200;
+    .idbl_hto--light .idbl_hto__content {
+        &__addtobasketbar:not(.idbl_hto__content__addtobasketbar--no_erp_info) {
+            .erp-info-container {
+                .erp-info-data {
+                    width: 440px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px){
+    .idbl_hto--light .idbl_hto__content {
+        &__addtobasketbar:not(.idbl_hto__content__addtobasketbar--no_erp_info) {
+            .erp-info-container {
+                .erp-info-data {
+                    width: 580px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1199px){
+    .idbl_hto {
+        &--light {
+            .idbl_hto__content {
+                &__partnumber {
+                    align-items: flex-start;
+                }
+                &__addtobasketbar {
+                    .idbl_hto__content__info {
+                        @include prefix_grid_item(1, 2, 2);
+                    }
+                    .idbl_hto__content__actions {
+                        &--buttons {
+                            @include prefix_grid_item(2, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//@media (max-width:991px){
+@media (max-width:1199px){
+    .idbl_hto__content__actions {
+        &.idbl_hto__content__actions--buttons {
+            justify-content: flex-start;
+        }
+    }
+}
+@media (max-width:767px){
+    .idbl_hto--light {
+        .idbl_hto__content {
+            &__addtobasketbar {
+                .idbl_hto__content__actions {
+                    &.idbl_hto__content__actions--buttons {
+                        margin-top: 4px;
+                    }
+                }
+                .erp-info-data {
+                    font-size: .85rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:479px){
+    .idbl_hto--light {
+        .idbl_hto__content {
+            &__addtobasketbar {
+                .idbl_hto__content__actions--buttons {
+                    .basket-actions-container {
+                        .quantity-container .quantity-lbl {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.idbl_hto_wrapper.idbl_hto_wrapper--no_info {
+    .idbl_hto {
+        &--light {
+            .idbl_hto__content {
+
+                @media (min-width: 768px){
+                    &__partnumber {
+                        @include prefix_grid_item(1, 2);
+                    }
+                    &__addtobasketbar {
+                        @include prefix_grid(0 250px, auto);
+                        @include prefix_grid_item(2, 2);
+                        .idbl_hto__content__info {
+                            display: none;
+                        }
+                        .idbl_hto__content__actions--buttons {
+                            @include prefix_grid_item(1, 1, 2);
+                        }
+                    }
+                }
+                @media (min-width: 992px){
+                    &__addtobasketbar {
+                        @include prefix_grid_item(2, 2);
+                    }
+                }
+            }
+        }
+    }
+}
+

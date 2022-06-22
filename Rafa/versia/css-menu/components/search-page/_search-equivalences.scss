@@ -1,0 +1,128 @@
+@import "../colors";
+@import "../mixins";
+
+@mixin equivalent-styles {
+  #smc-equivalent-container, #products-container {
+    .equivalent-row {
+      .name-description-phone {
+        display: none;
+      }
+
+      .image {
+        border: 2px solid $blue;
+        border-radius: 10px;
+        padding: 4px;
+        text-align: center;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .name-description {
+        .name {
+          margin-bottom: 8px;
+        }
+      }
+
+      .additional-information-container {
+        border: 2px solid $light-gray;
+        border-radius: 10px;
+
+        &.active {
+          border: 2px solid $blue;
+        }
+
+        @include attribute-list;
+
+        .general-information {
+
+        }
+        @media (min-width: 992px) {
+          .general-information {
+            display: flex;
+
+            .name {
+              margin-left: 15px;
+            }
+          }
+        }
+
+        .family-series-data {
+
+        }
+
+        #equivalencesContainer {
+          #tabSearchResult {
+
+            &::after {
+              position: relative;
+              top: 4px;
+              left: -8px;
+              background: none;
+            }
+
+            &.active::after {
+              background: linear-gradient(to right, #0074be, rgba(0, 116, 190, 0));
+            }
+
+            a {
+              font-weight: normal;
+            }
+          }
+
+          .product-toolbar-component-simple-tools {
+            .list-items {
+
+              a {
+                justify-content: normal;
+                font-weight: normal;
+
+                .product-toolbar-menu-item {
+                  width: 130px;
+                }
+
+                i {
+                  margin-left: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .equivalent-row.phone,
+    .equivalent-row.tablet {
+      .name-description-desktop {
+        .name {
+          display: none;
+        }
+        .description {
+          margin-top: 16px;
+        }
+      }
+      .name-description-phone {
+        display: block;
+      }
+
+      .attribute-list {
+        .attribute-list-row {
+          .attribute-name {
+            width: 100px;
+          }
+
+          .attribute-value {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+
+    .equivalent-footer {
+      border: 2px solid $light-gray;
+      border-radius: 10px;
+    }
+  }
+}
+

@@ -1,0 +1,71 @@
+.ssi-component {
+  .ssi-filter-text {
+    p {
+      font-size: .9rem;
+    }
+  }
+
+  #ssi-filters-container {
+    .ssi-filter-btn-show-less,
+    #secondPartFilter {
+      display: none;
+    }
+
+    &.open {
+      .ssi-filter-btn-show {
+        display: none;
+      }
+
+      .ssi-filter-btn-show-less,
+      #secondPartFilter {
+        display: block;
+      }
+    }
+
+    .part-number-filter-container {
+      display: flex;
+
+      .ssi-filter-btn-all {
+        min-width: 150px;
+      }
+    }
+  }
+
+  #ssi-filter {
+    .select2-selection--single {
+      span {
+        color: black;
+      }
+    }
+    .select2{
+      &.select2-container{
+        width: 100% !important; // avoid select2 hidden size problem
+      }
+    }
+    input[type="text"] {
+      font-size: 16px;
+      height: 42px;
+      padding: 5px 50px 5px 20px;
+      border: 2px solid #cccccc;
+      border-radius: 10px;
+      font-style: italic;
+
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-style: italic;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        font-style: italic;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        font-style: italic;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        font-style: italic;
+      }
+
+      &.search-option{
+        padding-right: 20px;
+      }
+    }
+  }
+}

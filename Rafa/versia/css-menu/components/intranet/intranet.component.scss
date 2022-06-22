@@ -1,0 +1,641 @@
+@import '../_colors.scss';
+
+#generalListForm{
+  .generalListFormRow{
+    margin-bottom: 30px;
+  }
+
+  .generalListFormTextarea{
+    height: 155px;
+  }
+
+  .generalListSaveButton{
+    margin-top: 20px; width:200px;
+  }
+}
+
+.generalList-container-form {
+  .heading-08 {
+    margin-bottom: 60px;
+  }
+  .generalListFormRow {
+    margin-left: 0;
+  }
+  .blue-separator {
+    margin-left: -15px;
+  }
+
+}
+
+.blue-dialog {
+  color: $blue;
+  background-color: $plain-blue;
+}
+
+.error-dialog {
+  color: $red-error;
+  background-color: #ffcdcdba;
+}
+
+.dialog {
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  overflow: auto;
+
+  .dialog-icon {
+    display: block;
+    width: 50px;
+    position: relative;
+    float: left;
+    margin: 20px;
+
+    i {
+      padding-right: 8px;
+      font-size: 20px;
+    }
+  }
+
+
+  .dialog-content {
+    display: block;
+    float: left;
+    position: relative;
+    width: 70%;
+    margin: 20px;
+  }
+
+  .dialog-title {
+    font-weight: 900;
+  }
+
+  .dialog-close {
+    float: right;
+    display: block;
+    cursor: pointer;
+    margin: 20px;
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+
+}
+
+.list-dialog {
+  display: block;
+  margin: 40px auto 0;
+
+  .dialog-title {
+    font-weight: 900;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .dialog-icon {
+    width: 30px;
+  }
+}
+
+.generalListRightColumn{
+  .generalListDocumentsList{
+    border-bottom:1px dashed #0074BE;
+    padding-bottom: 18px;
+    img{
+      width: 100%;
+      height:100%;
+    }
+  }
+
+  .cta-box{
+    margin-top: 20px;
+    a{
+      width: 100%;
+    }
+  }
+}
+
+.generalList-list {
+  .centered {
+    text-align: center;
+  }
+
+  .disabled {
+    opacity: 0.40;
+  }
+}
+
+.pagination {
+  margin-top: 15px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  border-radius: 0.25rem;
+
+
+  &-item {
+    padding: 8px 16px;
+    float:left;
+    text-decoration: none;
+    line-height: 1.25;
+  }
+
+  .disabled &-item {
+    color: $gray;
+  }
+
+
+  .current {
+    background-color: $blue;
+    color: $white;
+    border-radius: 5px;
+  }
+
+}
+
+.generalList-label {
+  display: block;
+  text-align: right;
+  @media (max-width: 576px){
+    text-align: left;
+  }
+}
+
+.generalList-edit {
+  .generalList-label {
+    text-align: left;
+  }
+
+  .generalList-white-label {
+    float: left;
+  }
+  .generalList-white-value {
+    float: left;
+    padding-left: 15px;
+  }
+
+  .generalList-item-status {
+    display: inline-block;
+  }
+
+  .browse-btn {
+    display: block;
+  }
+
+
+
+  .note {
+    background-color: $plain-blue;
+    border-radius: 10px;
+    color: $blue;
+  }
+}
+
+.generalList-value {
+  .fas {
+    margin-left: 10px;
+  }
+}
+
+.generalList-item-status {
+  padding: 6px 10px;
+  color: white;
+  border-radius: 6px;
+
+  &-approved {
+    background-color: $bg-status-green;
+  }
+
+  &-disapproved {
+    background-color: $bg-status-gray;
+  }
+}
+
+
+.blue-separator {
+  display: flex;
+  position: relative;
+  background-color: $blue;
+  width: 100%;
+  padding: 6px 0 6px 15px;
+  border-radius: 6px;
+
+  @media (max-width: 576px) {
+    margin-left: 0;
+  }
+
+  label {
+    margin-bottom: 0;
+  }
+
+  .generalList-white-value, .generalList-white-label {
+    color: $white!important;
+  }
+
+  .generalList-white-label {
+    margin-right: 15px;
+  }
+
+  .generalList-white-value {
+    margin-left: -15px;
+  }
+
+
+}
+
+
+.fancybox-is-open .fancybox-bg {
+  opacity: .5;
+}
+.fancybox-inner .fancybox-content {
+  background: $white!important;
+  border-radius: 1rem;
+  border: 2px solid $blue;
+  max-width: 80%;
+}
+
+.fancybox-content iframe, .fancybox-content img {
+  padding: 40px 80px;
+  border-radius: 10px;
+}
+
+
+.files {
+  width: 100%;
+
+  .attachment-note {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+}
+
+.attachment-note {
+  font-size: 12px;
+}
+
+.generalList-files-list {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-left: 0;
+
+  &-item {
+    display: block;
+    float: left;
+    width: 20%;
+
+    .attachment-detail {
+      display: block;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+      height: 300px;
+      margin: 20px 10px;
+      text-align: center;
+      position: relative;
+      transition: all .15s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+      }
+    }
+
+    .attachment-info {
+      display: block;
+      margin-top: 15px;
+      overflow: hidden;
+      font-size: 11px;
+      max-height: 40px;
+    }
+
+    .attachment-thumbnail {
+      max-width: 100%;
+      max-height: 120px;
+      border-radius: 4px;
+    }
+
+    .thumbnail-placeholder {
+      display: flex;
+      height: 160px;
+      background-color: $bg-box-gray;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 60px;
+        color: $bg-status-gray;
+      }
+
+      .fa-file-excel {
+        color: #a9d2b1;
+      }
+
+      .fa-file-powerpoint {
+        color: #d2c2a9;
+      }
+
+      .fa-file-word {
+        color: #a9c2d2;
+      }
+
+      .fa-file-pdf {
+        color: #d2a9b0;
+      }
+    }
+
+
+    .attachment-buttons {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      left: 10px;
+      margin-bottom: 10px;
+
+      .btn {
+        margin-left: 6px;
+      }
+      .generalList-btn-secondary .fas {
+        padding: 0;
+      }
+
+      .generalList-btn-secondary {
+        float: right;
+        padding: 8px 12px;
+        transition: all .15s ease-in-out;
+        width: 44px;
+
+        &:hover {
+          //box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.50);
+          box-shadow: none;
+          color: $white!important;
+          background: $blue!important;
+        }
+      }
+
+      .fas-left {
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        color: #ffcc00;
+      }
+
+      label{
+        float: left;
+
+        input{
+            position: absolute;
+            opacity: 0;
+
+            &:checked + div{
+                box-shadow: none;
+                color: #fff !important;
+                background: #0074BE !important;
+            }
+        }
+
+      }
+    }
+    @media (max-width: 1280px) {
+      width: 25%;
+    }
+    @media (max-width: 1024px) {
+      width: 33.33%;
+    }
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  .generalList-edit & {
+    .attachment-detail {
+      border: 1px dashed rgba(0,0,0,0.3);
+    }
+  }
+}
+
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+
+  & input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: right;
+    opacity: 0;
+    background: none repeat scroll 0 0 transparent;
+    cursor: inherit;
+    display: block;
+  }
+
+  & ::-ms-browse {
+    font-size: 10000px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+.dashboard-user {
+  border-radius: 10px;
+  border: 1px solid $blue;
+
+  .fas {
+    padding-right: 6px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  button {
+    border:none;
+    color: $blue;
+    margin-bottom: 0;
+    padding: 0;
+    background: none;
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+      color:$dark-blue;
+    }
+
+    &:focus { outline: none; }
+  }
+}
+
+.dashboard-files {
+  background: $bg-box-gray;
+  padding: 6px 20px;
+  border-radius: 10px;
+}
+
+
+
+.generalList-edit {
+
+  .dashboard-files {
+    background-color: $white;
+  }
+
+  /* File upload */
+  .btn-outline-secondary {
+    background: $white;
+    border-color: $blue;
+    color: $blue;
+    transition: all .15s ease-in-out;
+    padding: 6px 12px;
+
+    &.disabled, &:disabled {
+      opacity: 0.65;
+    }
+
+    .fas {
+      padding: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.50);
+    }
+  }
+}
+
+.modal .modal-content {
+  border: 2px solid $blue!important;
+}
+
+.modal-lg {
+  .btn-outline-secondary {
+    background: $white;
+    border-color: $blue;
+    color: $blue;
+    transition: all .15s ease-in-out;
+    padding: 6px 12px;
+
+    &.disabled, &:disabled {
+      opacity: 0.65;
+    }
+
+    .fas {
+      padding: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.50);
+    }
+  }
+
+  .btn.btn-navigate {
+    opacity: 1;
+
+    i {
+      color: $blue;
+      font-size: 40px;
+    }
+    &:disabled {
+      opacity: 0.65;
+      cursor: auto;
+
+      i {
+        color: $light-gray;
+      }
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.generalList-btn-secondary, .generalList-container .btn-secondary {
+  background: $white;
+  border-color: $blue;
+  color: $blue;
+  transition: all .15s ease-in-out;
+
+  &.disabled, &:disabled {
+    opacity: 0.65;
+  }
+
+  .fas {
+    padding-left: 6px;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.50);
+  }
+
+}
+
+
+.generalList-btn-primary, .generalList-container .btn-primary {
+  background: $blue;
+  border-color: $blue;
+  color: $white;
+  transition: all .15s ease-in-out;
+
+  &.disabled, &:disabled {
+    opacity: 0.65;
+  }
+
+  .fas {
+    padding-left: 6px;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.50);
+    color: $white;
+  }
+}
+
+.generalList-container {
+  .modal-title {
+    padding: 10px 25px;
+  }
+
+
+  .modal-body {
+    padding: 20px 40px;
+  }
+
+  #btn-return {
+    &:hover {
+      color: $dark-blue;
+      box-shadow: none;
+    }
+  }
+}
+
+.icons_ci-switch{
+  text-align: end;
+  margin-bottom: 15px;
+
+  .icons{
+    font-size: 17px;
+    border: 2px solid $blue;
+    border-radius: 10px;
+    padding: 10px 11px;
+    text-align: end;
+    transition: all .15s ease-in-out;
+
+    &_active{
+      color: $white;
+      background: $blue;
+    }
+
+    &:hover{
+      color: $white;
+      background: $blue;
+    }
+  }
+}
+
+
+
+

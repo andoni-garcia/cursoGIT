@@ -1,0 +1,106 @@
+.idbl_hto {
+    &--cc {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* IE10+ CSS styles go here */
+            display: flex;
+            justify-content: center;
+        }
+        .idbl_hto__content {
+            @include prefix_grid(1fr 80px 100px, auto);
+            grid-gap: 2px 6px;
+            padding: 0 10px;
+            &__data,
+            &__info {
+                display: none;
+            }
+            &__data {
+                @include prefix_grid_item(1, 1, 3);
+            }
+            &__partnumber {
+                @include prefix_grid_item(1, 2, 2);
+                display: flex;
+                align-items: center;
+                &__actions {
+                    padding-top: 0;
+                }
+            }
+            &__addtobasketbar {
+                @include prefix_grid_item(3, 2);
+                padding-top: 3px;
+            }
+            &__actions {
+                &--buttons {
+                    align-items: flex-start;
+                }
+                &--switch {
+                    @include prefix_grid_item(2, 3, 2);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+    .idbl_hto {
+        &--cc {
+            .idbl_hto__content {
+                @include prefix_grid(minmax(min-content, max-content) 102px 180px, auto);
+                padding: 0;
+                &__data {
+                    @include prefix_grid_item(1, 1, 3);
+                }
+                &__addtobasketbar {
+                    @include prefix_grid_item(2, 2);
+                }
+                &__actions {
+                    &--switch {
+                        @include prefix_grid_item(3, 2);
+                    }
+                }
+                &__partnumber {
+                    @include prefix_grid_item(1, 2);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .idbl_hto {
+        &--cc {
+            .idbl_hto__content {
+                &__addtobasketbar {
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        /* IE10+ CSS styles go here */
+                        padding-top: 0;
+                    }
+                }
+                &__actions {
+                    &--buttons {
+                        flex: 1 0 102px;
+                        max-width: 102px;
+                    }
+                    &--switch {
+                        flex: 1 0 180px;
+                        padding-left: 6px;
+                        max-width: 180px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .idbl_hto {
+        &--cc {
+            .idbl_hto__content {
+                .sscw__selection_table__register:last-child .sscw__selection_table__cell:first-child,
+                .sscw__selection_table__register:last-child .sscw__selection_table__cell:nth-child(2),
+                .sscw__selection_table__register:last-child .sscw__selection_table__cell:last-child {
+                    display: block;
+                }
+            }
+        }
+    }
+}

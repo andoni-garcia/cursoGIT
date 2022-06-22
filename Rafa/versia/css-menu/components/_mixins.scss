@@ -1,0 +1,166 @@
+@import "colors";
+
+@mixin rotate-180() {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.rotate-180, .rotate-180-before::before {
+  @include rotate-180;
+}
+
+@mixin rotate-90() {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.rotate-90, .rotate-90-before::before {
+  @include rotate-90;
+}
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate(#{$deg}deg);
+  -moz-transform: rotate(#{$deg}deg);
+  -o-transform: rotate(#{$deg}deg);
+  -ms-transform: rotate(#{$deg}deg);
+  transform: rotate(#{$deg}deg);
+}
+
+@mixin flip() {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph; /*IE*/
+  filter: fliph; /*IE*/
+}
+.flip, .flip-before::before {
+  @include flip;
+}
+
+@mixin attribute-list() {
+  .attribute-list {
+    .attribute-list-row {
+      display: flex;
+
+      .attribute-name {
+        width: 190px;
+        text-align: right;
+        overflow-wrap: break-word;
+        color: $gray;
+      }
+
+      .attribute-value {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+@mixin back-button() {
+  .back-button {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    font-family: "smc";
+    font-size: 18px;
+    color: $blue;
+
+    margin: 10px;
+    padding: 4px;
+
+    &::after {
+      content: '\68';
+    }
+  }
+}
+
+@mixin image(){
+  .image {
+    padding: 4px;
+    text-align: center;
+    min-height: 210px;
+  }
+
+  .image>img {
+    width: 100%;
+  }
+}
+
+@mixin is-new-product-tag () {
+  .is-new-product {
+
+    $line-height: 40px;
+    .is-new-product-tag {
+      @include rotate(-45);
+      position: absolute;
+      top: -60px;
+      left: -90px;
+      background: $blue;
+      width: 200px;
+      height: 150px;
+      text-align: center;
+      color: white;
+
+      span {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-weight: bold;
+        width: 100%;
+        line-height: $line-height;
+        font-size: 1.1em;
+        text-transform: uppercase;
+      }
+
+      .is-new-product-blank {
+        position: absolute;
+        top: 61px;//Magic number to avoid cut top-left corner when showing Product toolbar
+        left: -5px;
+        width: 210px;
+        height: 49px;//Magic number to avoid cut top-left corner when showing Product toolbar
+        background-color: white;
+      }
+
+      //&:after {
+      //  top: -40px;
+      //  left: 0;
+      //  content: "";
+      //  display:block;
+      //  width: 0;
+      //  height: 0;
+      //  border-top: 40px solid transparent;
+      //  border-bottom: 40px solid transparent;
+      //  border-right: 40px solid transparent;
+      //}
+    }
+  }
+}
+
+@mixin mobile-tab-icon(){
+  .simple-collapse {
+    margin: 10px 0;
+
+    a::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      font-family: "smc";
+      content: "\6e";
+      font-size: 18px;
+      color: $blue;
+    }
+    a:disabled::after,
+    a.disabled::after{
+      color: $font-gray;
+    }
+    a.active::after{
+      content: "\68";
+    }
+  }
+}

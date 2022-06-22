@@ -1,0 +1,105 @@
+@import "../../colors";
+@import "../../mixins";
+
+$navigation-arrow-size: 30px;
+
+.productconfigurator-component {
+  .related-products-container {
+    margin-bottom: 30px;
+
+    .related-products-slider {
+      display: flex;
+      width: 100%;
+
+      //Only apply when Slick UI is not working
+      > .related-product-item {
+        margin-right: 10px;
+      }
+
+      /* the slides */
+      .slick-slide {
+        margin-left: 4px;
+        margin-right: 10px;
+      }
+
+      .slick-prev, .slick-next {
+        background: $blue;
+        border-radius: 50%;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+
+        &::before {
+          font-family: "smc";
+          font-size: $navigation-arrow-size;
+          color: white;
+          opacity: 1;
+          position: relative;
+          left: 2px;
+        }
+
+        &.slick-disabled {
+          display: none !important;
+        }
+      }
+      .slick-prev::before {
+        content: "\6c";
+      }
+      .slick-next::before {
+        content: "\6c";
+      }
+      .slick-prev {
+        @include flip;
+        margin-top: -15px;
+      }
+
+      .related-product-item {
+        width: 196px !important; //To override Slick's width: 100%; -> (200px - border)
+        height: 270px;
+        flex-direction: column;
+        border-radius: 10px;
+        border: 2px solid $blue;
+
+        .image {
+          position: relative;
+          padding: 5px;
+          text-align: center;
+
+          &::after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(to right, $blue, rgba(0, 116, 190, 0));
+            bottom: 0;
+            left: 0;
+          }
+
+          img {
+            width: auto;
+            display: initial;
+          }
+        }
+
+        .name {
+          padding: 15px;
+          min-height: 72px;
+
+          .name-content {
+            font-weight: bold;
+            font-size: 0.9em;
+            word-break: break-word;
+          }
+        }
+
+
+        .configure {
+          padding: 0 15px;
+          font-size: 0.9em;
+        }
+      }
+    }
+
+  }
+}

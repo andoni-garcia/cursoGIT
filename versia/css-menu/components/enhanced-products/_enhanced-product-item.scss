@@ -1,0 +1,20 @@
+@import '../_colors';
+
+@mixin enhancedProductItem() {
+  .product-item {
+    .category-tile {
+      .category-tile__image {
+        height: 200px;
+      }
+
+      .category-tile__text__inner {
+        display: block;
+      }
+
+      &:after {
+        background: none;
+        height: 0;
+      }
+    }
+  }
+}

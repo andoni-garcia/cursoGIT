@@ -1,0 +1,256 @@
+.graphical_editor {
+	display: -moz-inline-stack;
+    float: left;    
+	height: 250px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;    
+	width: 100%;
+	z-index: 1;
+}
+.graphical_editor .label {
+	font-size:8pt;
+	text-align:center;
+}
+/* Border color on hover */
+.selectable:hover, .selectable:hover {
+    border: 1px solid #FFD700;
+    cursor: pointer;
+    z-index:555;
+}
+.selectable.selected:hover, .selectable.selected:hover {
+    cursor: default;
+}
+/* Border color when selected */
+.selectable.selected, .selectable.selected {
+    border: 1px solid #2574B9;
+}
+.no_image {
+	background-color: #D9D9D9;
+}
+.copy_active {
+	/*          Primera url para IE         / Segunda para Resto(Firefox, chrome, etc...) / help en caso de fallo de las anteriores */
+	cursor: url(../images/vcconfigurator/brocha.png), url("../../images/vcconfigurator/brocha.png"), url(../images/vcconfigurator/brocha.png), url("../../images/vcconfigurator/brocha.png"), help !important;
+}	
+
+
+
+
+/******************************************************
+ *	  				MIXEDS		  					  *
+ ******************************************************/
+.mixed_element {
+	height: 83px;
+    position: absolute;
+    top: 90px;
+    width: 55px;
+}
+.mixed_number {
+	background-color: #FFFFFF;
+    color: #000000;
+    height: 13px;
+    position: absolute;
+    top: 64px;
+    width: 55px;
+}
+.mixed_element.unselected:hover, .mixed_element.selected, .mixed_number.selected {
+	height: 81px;
+    width: 53px;
+}
+
+/******************************************************
+ *	  				INPUTS		  					  *
+ ******************************************************/
+.input_element {
+	height: 80px;
+    position: absolute;
+    top: 96px;
+    width: 35px;
+}
+.input_number {
+	background-color: #FFFFFF;
+    color: #000000;
+    height: 13px;
+    position: absolute;
+    top: 70px;
+    width: 35px;
+}
+.input_element.unselected:hover, .input_element.selected {
+	height: 78px;
+    width: 33px;
+}
+
+/******************************************************
+ *	  				OUTPUTS		  					  *
+ ******************************************************/
+.output_element {
+	height: 80px;
+    position: absolute;
+    top: 96px;
+    width: 35px;
+}
+.output_number {
+	background-color: #FFFFFF;
+    color: #000000;
+    height: 13px;
+    position: absolute;
+    top: 70px;
+    width: 35px;
+}
+.output_element.unselected:hover, .output_element.selected {
+	height: 78px;
+    width: 33px;
+}
+
+/******************************************************
+ *	  				MANYFOLD	  					  *
+ ******************************************************/
+ .manifold_d2 {
+ 	height: 90px;
+    left: 105px;
+    position: absolute;
+    top: 96px;
+    width: 80px;
+ }
+.manifold_d, .manifold_u {
+    height: 90px;
+    position: absolute;
+    width: 50px;
+    top: 86px;
+}
+.manifold_d.si_unit {
+	position:absolute;
+	top:91px;
+	width:127px;
+	height:83px;
+}
+.manifold_d_label, .manifold_u_label {
+	color:white;
+	background-color:black;
+	position:absolute;
+	top:193px;
+	width:50px;
+	height:15px;
+}
+.short_manifold.manifold_d, .short_manifold.manifold_u {
+    position: absolute;
+    width: 50px;
+    top: 101px;
+}
+.xshort_manifold.manifold_d, .xshort_manifold.manifold_u {
+    position: absolute;
+    width: 50px;
+    top: 126px;
+}
+.medium_manifold.manifold_d, .medium_manifold.manifold_u {
+    position: absolute;
+    width: 50px;
+    top: 91px;
+}
+.xmedium_manifold.manifold_d, .medium_manifold.manifold_u {
+    position: absolute;
+    width: 50px;
+    top: 77px;
+}
+.large_manifold.manifold_d, .large_manifold.manifold_u {
+    position: absolute;
+    width: 50px;
+    top: 56px;
+}
+
+/******************************************************
+ *	  				STATION		  					  *
+ ******************************************************/
+.station_number {
+	color:black;
+	background-color:white;
+	position:absolute;
+	width:27px;
+	height:13px;
+	top: 41px;
+}
+.base_plate {
+	position: absolute; 
+	width: 25px; 
+	height: 50px;
+	top: 126px; 
+}
+.base_plate.selected, .base_plate.unselected:hover {
+	height:48px;
+	width:23px;
+}
+.intermediate_level {
+	position: absolute; 
+	top: 96px; 
+	width: 25px; 
+	height: 31px;
+}
+.intermediate_level.selected, .intermediate_level.unselected:hover {
+	height:29px;
+	width:23px;
+}
+.valves {
+	position:absolute;
+	top:28px;
+	width:25px;
+	height:69px;
+}
+.valves.big_valve {
+	top:21px;	
+}
+.valves.selected, .valves.unselected:hover {
+	height:67px;
+	width:23px;
+}
+.station_wiring {
+	color:black;
+	background-color:white;
+	position:absolute;
+	top:176px;
+	width:25px;
+	height:15px;
+}
+.block_disk {
+	position: absolute; 
+	top: 199px; 
+	width: 25px; 
+	height: 31px;
+    margin-left:13px;
+}
+.no_block_disk .block_disk{
+	display:none;
+}
+.no_configured_block_disk .block_disk {
+	background-color: #D9D9D9;
+    background-image: url("../../images/vcconfigurator/block_disk.jpg");
+    height: 31px;
+    position: absolute;
+    top: 198px;
+    width: 25px;
+}
+.no_configured_block_disk .block_disk:hover {
+	height: 29px;
+    width: 23px;
+    background-position: -1px -1px;
+}
+.no_intermediate .valves {
+	top: 58px;
+}
+.no_intermediate .valves.big_valve {
+	top:52px;
+}
+.any_has_intermediate .station_number {
+	top:14px;
+}
+.any_has_big_valve .station_number {
+	top:37px;
+}
+.any_has_intermediate.any_has_big_valve .station_number {
+	top:0px;
+}
+.no_intermediate .intermediate_level {
+	display:none;
+}
+#graphical_editor_content_div div{
+	box-sizing: content-box;
+}

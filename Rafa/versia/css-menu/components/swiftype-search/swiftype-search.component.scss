@@ -1,0 +1,55 @@
+@import "../colors";
+
+.loading-container-search-text-js {
+  position:absolute;
+  display: none;
+  top: 80px;
+  width: 200px;
+  z-index: 2000;
+  right: 100px;
+  .spinner{
+    margin:0;
+  }
+}
+
+ul.typeahead {
+  z-index: 200;
+
+  li.active, .dropdown-item:hover {
+    background-color: $light-gray;
+  }
+}
+
+.search-bar-input-container {
+  &.ssi-search-result {
+    .typeahead {
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 7px;
+        background-color: $light-gray;
+        border-bottom-left-radius: 1px;
+        border-bottom-right-radius: 1px;
+      }
+
+      li:last-child,
+      li:last-child:hover {
+        background-color: $light-gray;
+
+        a, a:hover, a:active {
+          color: $font-gray !important;
+          text-decoration: none;
+          cursor: default;
+
+          overflow: visible !important;
+          text-overflow: clip !important;
+          white-space: normal !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.idbl_hto_wrapper--compare {
+    .idbl_hto {
+        @media (min-width: 480px) {
+            .idbl_hto__content {
+                @include prefix_grid(minmax(60px, max-content) 1fr, auto);
+
+                .idbl_hto__content__addtobasketbar {
+                    @include prefix_grid_item(2, 2); 
+                }
+            }
+        }
+        @media (max-width: 479px) {
+            .idbl_hto__content {
+                display: block;
+            }
+        }
+        @media (min-width: 480px) and (max-width: 767px) {
+            .idbl_hto__content {
+                .idbl_hto__content__addtobasketbar {
+                    .idbl_hto__content__info {
+                        margin-top: -10px;
+                    }
+                }
+            }
+        
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .idbl_hto__content {
+                .idbl_hto__content__addtobasketbar {
+                    .idbl_hto__content__info {
+                        margin-top: 0;
+                    }
+                }
+            }
+        
+        }
+    }
+}

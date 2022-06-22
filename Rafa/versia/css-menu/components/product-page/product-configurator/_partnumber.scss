@@ -1,0 +1,275 @@
+@import '../../_colors';
+
+.productconfigurator-component {
+    .product-info-container {
+        table.config {
+            border-collapse: separate;
+            width: 100%;
+
+            td#cpn_partnumber {
+                border: 2px solid $blue;
+                border-radius: 10px;
+                padding: 5px 10px;
+
+                table {
+                    border-collapse: separate;
+
+                    tr {
+                        display: flex;
+                        flex-wrap: wrap;
+                        font-weight: bold;
+
+                        td.partnumber_variable_chain {
+                            border-collapse: separate;
+                            border: 2px solid $blue;
+                            border-radius: 5px;
+                            min-width: 35px;
+                            min-height: 30px;
+                            text-align: center;
+                            color: $blue;
+                            padding: 0 15px;
+                            margin: 2px 1px;
+                            line-height: 26px;
+                        }
+
+                        td.partnumber_constant_chain {
+                            &:first-child {
+                                padding-right: 5px;
+                            }
+
+                            min-width: 35px;
+                            min-height: 25px;
+                            margin: 2px 1px;
+                            text-align: center;
+                            line-height: 28px;
+                        }
+
+                        td.partnumber_optdash_chain {
+                            min-width: 35px;
+                            margin: 2px 1px;
+                            text-align: center;
+                            line-height: 28px;
+                        }
+                    }
+                }
+            }
+
+            td#cpn_state {
+                width: 1%;//Mandatory to make "cpn_partnumber" to be display: flex
+                min-width: 36px;
+                img {
+                    display: none;
+                }
+
+                .part-number-state {
+                    width: 26px;
+                    height: 26px;
+                    display: inline-block;
+                    margin-top: 4px;
+                    margin-left: 4px;
+                }
+                .part-number-state-ok {
+                    font-family: 'smc';
+                    font-size: 2em;
+                    color: $part-number-status-completed;
+
+                    &::after {
+                        content: '\79';
+                    }
+                }
+            }
+
+            td.config-cell {
+                display: none;
+            }
+        }
+    }
+
+    /* FLOATING PART NUMBER */
+    .product-info-container {
+        position: fixed;
+        bottom: 0;
+        z-index: 1052;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        height: auto;
+        background-color: #eee;
+        left: 0;
+
+        table.config {
+            align-self: center;
+            border-collapse: separate;
+            table-layout: auto;
+            width: auto;
+            min-width: 0;
+            td#cpn_partnumber {
+                min-width: 0;
+            }
+        }
+
+        @media (-ms-high-contrast:none), (-ms-high-contrast:active) {
+            .productconfigurator-component .product-info-container table.config td#cpn_partnumber {
+                min-width: 60px;
+            }
+        }
+
+        @media (max-width:992px){
+            table.config {
+                min-width: 0;
+                max-width: 450px;
+                margin-left: 0;
+                margin-right: 0;
+                //td#cpn_partnumber {
+                //    min-width: 120px;
+                //}
+            }
+        }
+        //@media (max-width: 576px) {
+        //    table.config {
+        //        min-width: 280px;
+        //        //td#cpn_partnumber {
+        //        //    min-width: 120px;
+        //        //}
+        //
+        //    }
+        //}
+
+        #dc_saveToolbar {
+            margin-top: 0px;
+            width: 55px;
+
+            #copyToClipBoard_btn a {
+                font-weight: 800;
+            }
+        }
+
+        .dc_partnumberContainer {
+            width: 100%;
+
+            table.config td#cpn_partnumber {
+                background-color: white;
+
+                &.status-complete {
+                    border-color: $part-number-status-completed;
+                }
+
+                &.status-invalid {
+                    border-color: $part-number-status-invalid;
+                }
+
+                &.status-partial {
+                    border-color: $part-number-status-partial;
+                }
+            }
+        }
+    }
+
+    .product-info-container table.config td#cpn_partnumber table tr td.partnumber_constant_chain,
+    .product-info-container table.config td#cpn_partnumber table tr td.partnumber_variable_chain,
+    .product-info-container table.config td#cpn_partnumber table tr td.partnumber_optdash_chain {
+        //flex-grow: 1;
+        flex-shrink: 0;
+        //flex-basis: 30%;
+    }
+
+    #product-info-container__switch,
+    #product-info-container__switch:visited,
+    #product-info-container__switch:focus {
+        display: block;
+        padding: 6px 20px;
+        font-family: "smc";
+        font-size: 18px;
+        color: $blue;
+        outline: none;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .configurator-component #product-info-container__switch[data-collapsed="false"] {
+        transform:rotate(180deg);
+        &:before {
+            content: "\42";
+            color: $font-gray;
+        }
+    }
+
+    .configurator-component #product-info-container__switch[data-collapsed="true"] {
+        &:before {
+            content: "\42";
+            color: $blue;
+        }
+    }
+
+
+
+    @media (min-width:992px) {
+        //#product-info-container__toggle {
+        //    display: none;
+        //}
+
+        .product-info-container {
+            padding: 20px;
+
+            .dc_partnumberContainer {
+                width: auto;
+
+                table.config {
+                    max-width: 100%; /* auto max-width */
+
+                }
+            }
+
+            table.config {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (min-width:1200px) {
+        productconfigurator-component .product-info-container .dc_partnumberContainer table.config td#cpn_partnumber table tr {
+            flex-wrap: nowrap;
+        }
+    }
+
+    @media (min-width:992px) {
+        .product-info-container {
+            padding: 20px 40px;
+            padding-top: 0rem;
+            //padding-bottom: 0rem;
+        }
+    }
+    /* END FLOATING PART NUMBER*/
+}
+
+/* FLOATING PART NUMBER*/
+body.modal-open {
+    .productconfigurator-component {
+        .product-info-container {
+            display: none;
+        }
+    }
+}
+/* END FLOATING PART NUMBER*/
+
+.productconfigurator-component .product-info-container table.config td#cpn_partnumber:not(.status-complete) + td#cpn_state,
+.productconfigurator-component .product-info-container table.config td#cpn_partnumber:not(.status-complete) + td#cpn_state .part-number-state {
+    height: 0;
+    width: 0;
+}
+
+
+#product-info-container__toggle + .dc_partnumberContainer.confPageRestylingTEMP1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .productconfigurator-component .product-info-container table.config {
+        min-width: 600px;
+    }
+}

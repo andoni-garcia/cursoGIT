@@ -1,0 +1,19 @@
+<div class="form-row" data-bind="with: context">
+    <div class="col-12">
+        <ul class="eshop pagination" data-bind="visible: !initializating()">
+            <!-- ko foreach: visiblePages -->
+            <li class="page-item" data-bind="css: { disabled: $data.disabled }">
+                <a class="page-link" data-bind="click: $parent.pageClicked, css : { active : $data.text == $parent.page() }" href="#!">
+                    <!-- ko if: $data.prevNext == null -->
+                    <span data-bind="html: $data.text"></span>
+                    <!-- /ko -->
+                    <!-- ko if: $data.prevNext != null -->
+                    <i class="fas" data-bind="css : $data.prevNext"></i>
+                    <!-- /ko -->
+                </a>
+            </li>
+            <!-- /ko -->
+        </ul>
+    </div>
+</div>
+<div style="clear: both"></div>

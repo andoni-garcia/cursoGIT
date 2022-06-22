@@ -1,0 +1,279 @@
+.idbl_hto {
+    &__content__partnumber {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* IE10+ CSS styles go here */
+            padding-right: 6px;
+        }
+    }
+    &__partnumber {
+        &__actions {
+            flex: 1 1 38px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 38px;
+
+            #copyToClipBoard_btn {
+                margin-left: 0;
+            }
+        }
+        &__code_wrapper {
+            position: relative;
+            // flex: 1 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-left: 8px;
+            padding: 10px 8px;
+            width: auto; // calc(100% - 56px);
+            max-width: 90px;
+            min-width: 60px;
+            background-color: #fff;
+            border: 2px solid $blue;
+            border-radius: 6px;
+            cursor: pointer;
+            &:before,
+            &:after {
+                position: absolute;
+                bottom: 0;
+                display: block;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: all .3s ease-in-out;
+            }
+            &:before {
+                bottom: 100%;
+                content: '';
+                border-top: 16px solid $blue;
+                border-left: 16px solid transparent;
+                border-right: 16px solid transparent;
+            }
+            &:after {
+                bottom: calc(100% + 16px);
+                display: flex;
+                justify-content: center;
+                padding: 6px 8px;
+                min-width: 100%;
+                max-width: 200px;
+                content: attr(data-partnumber-code);
+                font-weight: 600;
+                text-align: center;
+                background-color: white;
+                border: 2px solid $blue;
+                border-radius: 8px;
+            }
+            @media (max-width: 767px){
+                &__code_wrapper {
+                    cursor: pointer;
+                }
+                &.code_show {
+                    &:before,
+                    &:after {
+                        opacity: 1;
+                        transition: opacity .3s ease-in-out;
+                    }
+                    &:after {
+                        transition-delay: 0;
+                    }
+                }
+            }
+            &--overflow {
+                .idbl_hto__partnumber__code {
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        display: block;
+                        padding-right: 2px;
+                        height: 100%;
+                        width: 38px;
+                        content: '...';
+                        opacity: 1;
+                        text-align: right;
+                        background-image: linear-gradient(to left, rgba(255,255,255,0.98) 40%, rgba(255,255,255,0.1) 60%);
+                        transition: all .3s ease-in-out;
+                    }
+                }
+            }
+
+            &--status-complete {
+                &,
+                &:after {
+                    border-color: $part-number-status-completed;
+                }
+                &:before {
+                    border-top-color: $part-number-status-completed;
+                }
+                .idbl_hto__partnumber__code_status {
+                    display: flex;
+                    color: $part-number-status-completed;
+                    border: 2px solid $part-number-status-completed;
+                    &:before {
+                        font-family: 'smc';
+                        font-size: 12px;
+                        content: '\79';
+                    }
+                }
+            }
+            &--status-invalid {
+                &,
+                &:after {
+                    border-color: $part-number-status-invalid;
+                }
+                &:before {
+                    border-top-color: $part-number-status-invalid;
+                }
+            }
+            &--status-partial {
+                &,
+                &:after {
+                    border-color: $part-number-status-partial;
+                }
+                &:before {
+                    border-top-color: $part-number-status-partial;
+                }
+            }
+        }
+        &__code_status {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2px;
+            width: 20px;
+            height: 20px;
+            transform: translateY(-36%) translateX(36%);
+            background-color: white;
+            border-radius: 50%;
+        }
+        &__code_title {
+            display: none;
+        }
+        &__code {
+            position: relative;
+            display: flex;
+            max-width: 100%;
+            height: 1.5rem;
+            overflow: hidden;
+
+            #cpn_partnumber,
+            #cpn_partnumber--compare {
+                display: flex;
+                [class^="partnumber_"]:not(:empty) {
+                    display: inline-block;
+                    font-weight: 800;
+                    white-space: nowrap;
+                }
+            }
+        }
+        &__accesories_wrapper {
+            width: auto;
+        }
+        &__accesories {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        &__accesory {
+            &_value {
+                display: flex;
+                font-weight: 800;
+                &:before {
+                    display: inline-block;
+                    padding: 0 4px;
+                    content: '+';
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 480px) {
+    .idbl_hto {
+        &__partnumber {
+            &__code_wrapper {
+                max-width: 120px;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .idbl_hto {
+        &__partnumber {
+            &__actions {
+                flex-basis: 48px;
+                max-width: 48px;
+            }
+            &__code_wrapper {
+                &--overflow {
+                    /* Bocadillo Partnumber */
+                    &:not([data-partnumber-code=""]):hover {
+                        &:before {
+                            opacity: 1;
+                        }
+                        &:after {
+                            opacity: 1;
+                            transition-delay: 0;
+                        }
+                    }
+                }
+            }
+            &__accesories_wrapper {
+                padding-left: 6px;
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    .idbl_hto {
+        &__partnumber {
+            &__code_wrapper {
+                max-width: 150px;
+            }
+        }
+    }
+}
+@media(min-width: 1200px) {
+    .idbl_hto {
+        &__partnumber {
+            &__actions {
+                position: absolute;
+                right: calc(89.5%);
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    top: 15px;
+                }
+            }
+            &__code_wrapper {
+                max-width: 240px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .idbl_hto {
+        &__content__partnumber {
+            flex-wrap: wrap;
+        }
+        &__partnumber {
+            &__actions {
+                padding-top: 4px;
+            }
+            &__code_wrapper {
+                cursor: pointer;
+            }
+            &__accesories_wrapper {
+                display: flex;
+                justify-content: center;
+                padding: 6px 6px 2px;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div class="d-none d-lg-block">
+    <!-- ko foreach: titles -->
+    <span class="wss-title-element" data-bind="css: $component.titleStepsStyle($index())">
+        <span data-bind="text: ($index() + 1)"></span>
+        <!-- ko if: $component.currentStep() + $component.increment() == $index() + 1 -->
+        <span data-bind="html: $data.html"></span>
+        <!-- /ko -->
+    </span>
+    <!-- /ko -->
+</div>
+<div class="d-none d-sm-block d-lg-none">
+    <h5>
+        <span data-bind="text: $component.currentStep() + $component.increment()"></span>/<span data-bind="text: titles.length"></span>&nbsp;
+        <span data-bind="text: getHtmlAtIndex($component.currentStep() + $component.increment() - 1)"></span>
+    </h5>
+</div>

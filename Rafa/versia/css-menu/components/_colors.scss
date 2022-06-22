@@ -1,0 +1,33 @@
+$font-gray: #4D4D4D;
+$font-blue: #233953;
+$blue: #0074BE;
+$white: #FFFFFF;
+$dark-blue: #0056B3;
+$plain-blue: #CDE5FF;
+$light-blue: #B6D9FF;
+$gray: #808080;
+$light-gray: #D3D3D3;
+$medium-gray: #aaaaaa;
+$gray-psearch: #f4f4f4;
+$red-error: #D20000;
+$validation-red: #FF0000;
+$validation-green: #28A745;
+$bg-status-green: #47c547;
+$bg-status-gray: #DDDDDD;
+$bg-box-gray: #EFEFEF;
+$part-number-status-completed: #0BDF00;
+$part-number-status-partial: gold;
+$part-number-status-invalid: #FF191F;
+
+.blue, .font-blue {
+  color: $blue;
+}
+.font-gray {
+  color: $font-gray;
+}
+.font-montserrat, .montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font-bold, .text-bold {
+  font-weight: bold;
+}
